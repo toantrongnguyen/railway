@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  http_basic_authenticate_with name: 'toan', password: '123456'
+
   def index
     @articles = Article.all
   end
