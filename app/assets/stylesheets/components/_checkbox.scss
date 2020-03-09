@@ -1,0 +1,86 @@
+.checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-weight: $font-weight-bold;
+  margin-bottom: 0;
+  color: $blue-light;
+  line-height: 18px;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    @include size(0, 0);
+
+    &:checked ~ .checkmark {
+      background-color: $orange;
+      border: 1px solid $orange;
+    }
+  }
+
+  .checkmark {
+    left: 0;
+    @include size(18px, 18px);
+    background: $gainsboro;
+    border: 1px solid $gainsboro;
+    @include abs-center-ver;
+    border-radius: $border-radius-small + 1;
+
+    &:after {
+      content: '';
+      display: none;
+      @include position(absolute, 1px, auto, auto, 5px);
+      @include size(6px, 11px);
+      border: 1px solid $white;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  &--project {
+    font-weight: $font-weight-base;
+    font-size: $font-size-small;
+    color: $white;
+  }
+
+  &--sign {
+    .checkmark {
+      background: $white;
+
+      &:after {
+        border: 1px solid $blue;
+        @include position(absolute, 1px, auto, auto, 5px);
+        @include size(6px, 11px);
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+      }
+    }
+
+    input {
+      &:checked ~ .checkmark {
+        background-color: $white;
+        border: 1px solid $white;
+      }
+    }
+  }
+
+  .link {
+    color: $green;
+  }
+
+  &--detail {
+    font-weight: $font-weight-base;
+    font-size: $font-size-base;
+    padding-left: 28px;
+  }
+
+  &--detail-set {
+    margin-bottom: 30px;
+  }
+}

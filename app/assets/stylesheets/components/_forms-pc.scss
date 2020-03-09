@@ -1,0 +1,317 @@
+// ======================================================
+// Components :: Forms PC
+// ======================================================
+
+.form-customize {
+  margin-bottom: 15px;
+  position: relative;
+  width: 100%;
+
+  .label-title {
+    color: $blue-lightest;
+    display: block;
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
+    margin: 0 0 5px 15px;
+    position: relative;
+    text-align: left;
+    word-break: break-word;
+
+    .required {
+      color: $red;
+      margin-left: 5px;
+      position: absolute;
+      top: -5px;
+    }
+  }
+
+  .form-control {
+    background-color: $blue-dark;
+    border-radius: $border-radius-base + 1;
+    border: 1px solid $blue-lighter;
+    color: $white;
+    font-size: $font-size-base;
+    height: 45px;
+    padding: 12px;
+
+    &::placeholder {
+      color: $blue-lightest;
+    }
+
+    &:focus {
+      border: 1px solid $blue-medium;
+      box-shadow: none;
+    }
+
+    &[readonly],
+    &[disabled] {
+      color: $white;
+      pointer-events: none;
+    }
+  }
+
+  .form-input {
+    position: relative;
+
+    .form-control {
+      padding-right: 42px;
+    }
+  }
+
+  .input-addon {
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+
+    .icon-fonts {
+      color: $blue-lightest;
+      cursor: pointer;
+      font-size: $font-size-large + 12;
+    }
+  }
+
+  .custom-select {
+    background: url('#{$path-image}/down.svg') right 15px center no-repeat;
+    color: $blue-lightest;
+  }
+
+  &--has-value {
+    margin-bottom: 20px;
+
+    .label-title {
+      color: $gray-small;
+      font-weight: $font-weight-base;
+
+      .label {
+        color: $red;
+        font-size: $font-size-medium;
+      }
+    }
+
+    .form-control {
+      border: 1px solid $gray-small;
+      color: $blue-light;
+      background: $white;
+
+      &::placeholder {
+        color: $gray-small;
+      }
+
+      &:focus {
+        border: 1px solid $blue-medium;
+      }
+
+      &--datepicker {
+        border-radius: 0 $border-radius-regular $border-radius-regular 0;
+        width: 117px;
+        text-align: center;
+      }
+
+      &[readonly],
+      &[disabled] {
+        color: $blue-light;
+      }
+    }
+
+    .custom-select {
+      background: url('#{$path-image}/icon-down.png') right 15px center no-repeat;
+    }
+
+    .input-addon {
+      .icon-fonts {
+        color: $blue-medium;
+      }
+    }
+  }
+
+  &--datepicker {
+    .form-control {
+      &::placeholder {
+        color: $gray-small;
+      }
+    }
+  }
+
+  &__datepicker {
+    width: calc(100% - 164px);
+    position: relative;
+
+    .form-control {
+      border-radius: $border-radius-regular 0 0 $border-radius-regular;
+      background: transparent;
+
+      &:focus {
+        border: 1px solid $gray-small;
+      }
+    }
+
+    .input-append {
+      @include position(absolute, 1px, 16px, auto, auto);
+      font-family: $font-family-icons;
+      color: $gray-small;
+      font-size: $font-size-large + 10;
+      cursor: pointer;
+      margin: 0;
+    }
+
+    .bootstrap-datetimepicker-widget {
+      width: 100%;
+      margin-top: 12px;
+
+      ul {
+        &:before {
+          @include position(absolute, -7px, 35px, auto, auto);
+        }
+      }
+    }
+  }
+
+  &--has-before {
+    width: 100%;
+    margin-bottom: 0;
+
+    .form-control {
+      padding: 16px 0;
+      height: 56px;
+      border-radius: 0;
+      border: 0;
+      border-bottom: 1px solid $white-dark;
+      background: transparent;
+
+      &:focus {
+        border: 0;
+        border-bottom: 1px solid $white-dark;
+      }
+    }
+
+    .input-append {
+      @include position(absolute, 8px, 16px, auto, auto);
+      font-family: $font-family-icons;
+      color: $gray-small;
+      font-size: $font-size-large + 10;
+      cursor: pointer;
+      margin: 0;
+    }
+
+    .bootstrap-datetimepicker-widget {
+      width: 100%;
+    }
+  }
+
+  &--textarea {
+    position: relative;
+
+    .form-control {
+      background: $white;
+      min-height: 224px;
+      resize: none;
+      line-height: 25px;
+    }
+  }
+
+  .input-group-append {
+    width: 164px;
+  }
+
+  &--edit {
+    border-bottom: 1px solid $white-dark;
+    padding-bottom: 4px;
+
+    .form-control {
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      height: auto;
+      color: $blue-light;
+      background: $white;
+    }
+
+    .label-title {
+      margin-left: 0;
+      color: $gray-small;
+    }
+  }
+
+  &--w-percent-50 {
+    width: 50%;
+    position: relative;
+
+    &:after {
+      @include position(absolute, 0, 0, auto, auto);
+      @include size(1px, 43px);
+      content: '';
+      background: $white-dark;
+    }
+
+    .label-title {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      &:after {
+        @include size(0, 0);
+        background: none;
+      }
+
+      .form-control,
+      .label-title {
+        padding-left: 10px;
+      }
+    }
+  }
+
+  .modal-todo-attendees & {
+    &--edit {
+      border-bottom-color: $gray-light-3;
+    }
+
+    &--w-percent-50 {
+      width: calc(50% - 7px);
+    }
+
+    .form-control {
+      &:focus {
+        border: 0;
+        outline: 0;
+      }
+    }
+
+    .label-title {
+      color: $gray-light-3;
+      font-weight: $font-weight-base;
+    }
+  }
+}
+
+.form-error {
+  .form-control {
+    border-color: $red;
+  }
+}
+
+.error-notice {
+  color: $gray-small;
+  font-size: $font-size-small;
+}
+
+.form-append-button {
+  .form-customize {
+    margin: 0;
+    width: calc(100% - 164px);
+  }
+
+  .checkbox {
+    width: 67px;
+    color: $gray-medium;
+    margin: 0 auto;
+  }
+
+  .form-control {
+    &::placeholder {
+      color: $gray-small;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+// ======================================================
+// Pages :: Edit User
+// 
+
+.user {
+  width: 100%;
+
+  &--edit {
+    padding: 20px 20px 40px;
+    border: 0;
+
+    .user__avatar {
+      @include circle(90px);
+      margin-bottom: 20px;
+      border: 3px solid $snow;
+
+      .icon-fonts {
+        font-size: $font-size-large;
+      }
+    }
+  }
+
+  &__title {
+    font-size: $font-size-medium;
+    color: $blue-light;
+    margin-bottom: 40px;
+    font-weight: $font-weight-bold;
+  }
+}

@@ -1,0 +1,55 @@
+// ======================================================
+// Components :: Dropdown
+// ======================================================
+
+.dropdown {
+  &-toggle {
+    border: 1px solid $gray-small;
+    border-radius: 0 5px 5px 0;
+    color: $blue-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  &-time {
+    width: 100%;
+    position: relative;
+
+    .user__list {
+      top: 54px;
+      padding: 0;
+      width: 100%;
+      right: 0;
+      background: $blue-medium;
+
+      &:before {
+        @include abs-center-hoz;
+        right: auto;
+        border-bottom: 9px solid $blue-medium;
+      }
+    }
+  }
+
+  &-item {
+    color: $white;
+    font-size: $font-size-base;
+    padding: 9px 15px;
+    text-align: center;
+
+    &:hover {
+      background: none;
+      color: $white;
+    }
+  }
+
+  &__list-time {
+    max-height: 235px;
+    overflow: auto;
+  }
+}

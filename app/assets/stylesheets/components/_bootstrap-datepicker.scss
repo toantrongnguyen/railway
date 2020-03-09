@@ -1,0 +1,58 @@
+// ======================================================
+// Components :: Bootstrap Datetimepicker
+// ======================================================
+
+
+.bootstrap-datetimepicker-widget {
+  background: transparent;
+  border: 0;
+  width: calc(100% + 117px);
+  padding: 0;
+  margin-top: 7px;
+
+  ul {
+    position: relative;
+    background: $white;
+    box-shadow: 0 4px 10px $box-shadow-medium;
+    border-radius: $border-radius-medium + 2;
+    border: 0;
+    width: 100%;
+    margin-bottom: 20px;
+
+    &:before {
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-bottom: 7px solid $blue-medium;
+      @include position(absolute, -7px, auto, auto, 28px);
+      content: '';
+    }
+  }
+
+  &.pull-right {
+    background: $blue-medium;
+    color: $white;
+
+    ul {
+      padding: 0 10px;
+
+      &:before {
+        @include position(absolute, -7px, 51px, auto, auto);
+        content: '';
+      }
+    }
+
+    .btn-primary {
+      background: none;
+      border: 0;
+
+      &:hover {
+        background: none;
+        border: 0;
+      }
+    }
+
+    .icon-fonts {
+      color: $white;
+    }
+  }
+}

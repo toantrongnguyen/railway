@@ -1,0 +1,163 @@
+// ======================================================
+// Pages :: Sign Pc
+// ======================================================
+
+.sign {
+  background: url('../images/bg-sign.svg') no-repeat center center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  &__inner {
+    background: $white;
+    box-shadow: 0 0 20px $box-shadow-normal;
+    border-radius: $border-radius-normal;
+    max-width: 916px;
+    width: 100%;
+    padding: 60px 45px 70px;
+    position: relative;
+
+    &--complete {
+      padding: 0;
+      background-color: rgba(255, 255, 255, .5);
+    }
+
+    &:before {
+      @include abs-center-hoz;
+      @include size(calc(100% - 40px), 26px);
+      bottom: -25px;
+      content: '';
+      background: $white;
+      box-shadow: 0 0 20px $box-shadow-normal;
+      border-radius: 0 0 5px 5px;
+      z-index: 0;
+      opacity: .99;
+    }
+  }
+
+  &__form {
+    padding: 8px;
+
+    .form-customize,
+    .custom-selectbox {
+      width: 50%;
+      padding: 0 30px;
+
+      .drop-select__label {
+        color: $gray-small;
+        font-weight: $font-weight-base;
+      }
+    }
+
+    .checkbox {
+      width: calc(50% - 30px);
+      float: right;
+      font-weight: $font-weight-normal;
+      font-size: $font-size-small;
+    }
+  }
+
+  &__button {
+    padding-top: 30px;
+
+    &-link {
+      color: $royalblue;
+      font-size: $font-size-small;
+    }
+  }
+
+  &__title {
+    font-size: $font-size-large + 2;
+    font-weight: $font-weight-bold;
+    color: $blue-light;
+    padding: 30px 30px 25px;
+  }
+
+  &__logo {
+    &--complete {
+      background: url('../images/bg-logo.png') $white no-repeat center center;
+      height: 100%;
+      padding: 127px 45px 50px;
+      max-width: 425px;
+      width: 100%;
+      border-radius: 5px 0 0 5px;
+    }
+
+    &-title {
+      font-size: $font-size-medium * 2;
+      margin: 30px 10px 80px;
+      font-weight: $font-weight-light;
+      line-height: 44px;
+    }
+
+    &-link {
+      display: block;
+      font-weight: $font-weight-bold;
+      color: $blue-medium;
+      margin-top: 5px;
+    }
+
+    &-user {
+      color: $blue-medium;
+    }
+
+    &-ft {
+      padding-top: 40px;
+      border-top: 1px solid $white;
+
+      .icon-fonts {
+        font-size: $font-size-large + 10;
+        color: $blue-medium;
+      }
+    }
+  }
+
+  &__content {
+    &--complete {
+      max-width: 491px;
+      width: 100%;
+      background: $white;
+      padding: 150px 73px;
+      border-radius: 0 5px 5px 0;
+    }
+
+    &--url {
+      padding: 110px 73px;
+    }
+
+    &--signin {
+      padding: 120px 73px;
+    }
+
+    &--forgot {
+      padding: 120px 62px;
+    }
+
+    &--forgot3 {
+      padding: 87px 73px 0;
+    }
+  }
+
+  &__icon {
+    line-height: 1;
+    margin-bottom: 35px;
+
+    .icon-fonts {
+      font-size: $font-size-medium * 4;
+      color: $blue-medium;
+    }
+  }
+
+  &__des {
+    color: $gray-medium;
+    margin: 13px 0 5px;
+  }
+
+  &__sub-title {
+    font-size: $font-size-large + 2;
+    font-weight: $font-weight-bold;
+    color: $blue-light;
+  }
+}

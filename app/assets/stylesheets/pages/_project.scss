@@ -1,0 +1,215 @@
+// ======================================================
+// Pages :: Project
+// ======================================================
+
+.header-sp {
+  &--project {
+    .logo {
+      margin: 0 auto;
+    }
+  }
+}
+
+.project {
+  padding: 38px 0 20px;
+  width: 100%;
+
+  &__title {
+    font-size: $font-size-medium;
+    color: $blue-light;
+    margin-bottom: 15px;
+  }
+
+  &__textarea {
+    padding: 40px 20px 0;
+    border-top: 4px solid $snow;
+
+    label {
+      margin-bottom: 20px;
+    }
+
+    .form-customize--textarea {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__name {
+    padding: 0 20px 20px;
+
+    .label-title {
+      font-weight: $font-weight-base;
+    }
+  }
+
+  &__map {
+    padding: 10px 20px 18px;
+  }
+
+  &__img-map {
+    @include size(100%, 210px);
+    position: relative;
+
+    &:before {
+      @include abs-center-hoz;
+      content: '';
+      width: calc(100% - 24px);
+      height: 10px;
+      background: $white-dark;
+      opacity: .7;
+      bottom: -10px;
+      z-index: -1;
+      border-radius: 0 0 5px 5px;
+    }
+
+    .map {
+      @include size(100%, 100%);
+      position: relative;
+      box-shadow: 0 5px 5px $box-shadow-medium;
+      border-radius: $border-radius-normal;
+
+      &:before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: $black;
+        opacity: .5;
+        left: 0;
+        bottom: 0;
+        z-index: 8;
+        border-radius: $border-radius-normal;
+      }
+
+      &.active {
+        &:before {
+          position: static;
+        }
+      }
+    }
+
+    iframe {
+      @include size(100%, 100%);
+      border-radius: $border-radius-normal;
+    }
+  }
+
+  &__title-map {
+    color: $gray-small;
+    font-weight: $font-weight-bold;
+    margin: 32px 0 20px;
+
+    &.active {
+      color: $blue-light;
+    }
+  }
+
+  &__title-seemore {
+    color: $blue-lighter;
+    font-weight: $font-weight-bold;
+    margin: 32px 0 20px;
+  }
+
+  &__sub-title-map {
+    color: $gray-medium;
+    font-size: $font-size-small;
+    margin-top: 6px;
+    font-weight: $font-weight-base;
+  }
+
+  &__souvenir {
+    padding: 40px 20px;
+    border-top: 4px solid $snow;
+  }
+
+  &__souvenir-choice {
+    color: $gray-medium;
+    display: flex;
+    align-items: center;
+
+    .icon-fonts {
+      font-size: $font-size-large;
+      margin-right: 15px;
+      line-height: 21px;
+    }
+  }
+
+  &__list-souvenir {
+    margin-top: 25px;
+    border-top: 1px solid $white-dark;
+  }
+
+  &__list-souvenir-item {
+    padding: 16px 0 14px;
+    border-bottom: 1px solid $white-dark;
+
+    .icon-fonts {
+      color: $orange;
+      font-size: $font-size-large;
+      margin-right: 18px;
+    }
+
+    .scrapbook {
+      color: $blue-light;
+      font-weight: $font-weight-bold;
+      flex: 1;
+    }
+
+    .num {
+      color: $gray-medium;
+      font-size: $font-size-small;
+      font-weight: $font-weight-base;
+    }
+
+    .person {
+      color: $gray-medium;
+      font-weight: $font-weight-base;
+    }
+  }
+
+  &__tabs {
+    margin-bottom: 90px;
+  }
+
+  &__button {
+    padding: 0 20px;
+
+    .icon-fonts {
+      font-size: $font-size-large;
+    }
+  }
+}
+
+.list-detail {
+  padding-bottom: 40px;
+
+  &__item {
+    width: calc(100% / 3);
+    text-align: center;
+
+    &.active {
+      .list-detail__icon {
+        color: $blue-medium;
+      }
+    }
+  }
+
+  &__title {
+    color: $blue-light;
+    font-weight: $font-weight-bold;
+    margin: 11px 0 5px;
+    line-height: 21px;
+  }
+
+  &__sub-title {
+    color: $gray-medium;
+    font-size: $font-size-small;
+  }
+
+  &__icon {
+    color: $gray-small;
+    font-size: $font-size-large + 15;
+    height: 33px;
+    display: flex;
+    align-items: center;
+  }
+}

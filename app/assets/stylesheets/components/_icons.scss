@@ -1,0 +1,225 @@
+// ======================================================
+// Components :: Icons
+// ======================================================
+
+// Icon Fonts
+@font-face {
+  font-family: kanziicons;
+  src:
+    url('#{$path-fonts}/kanziicons.ttf?mro1z2') format('truetype'),
+    url('#{$path-fonts}/kanziicons.woff?mro1z2') format('woff'),
+    url('#{$path-fonts}/kanziicons.svg?mro1z2#kanziicons') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+[class^='icon-fonts--'],
+[class*=' icon-fonts--'] {
+  // use !important to prevent issues with browser extensions that change fonts
+  // stylelint-disable-next-line declaration-no-important
+  font-family: $font-family-icons !important;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  // Better Font Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+$icon-fonts: 'icon-fonts';
+
+.#{$icon-fonts}--add-20:before { content: '\e900'; }
+
+.#{$icon-fonts}--add-30:before { content: '\e901'; }
+
+.#{$icon-fonts}--add-60:before { content: '\e902'; }
+
+.#{$icon-fonts}--add:before { content: '\e903'; }
+
+.#{$icon-fonts}--bin-24:before { content: '\e904'; }
+
+.#{$icon-fonts}--bin-30:before { content: '\e905'; }
+
+.#{$icon-fonts}--cancel:before { content: '\e906'; }
+
+.#{$icon-fonts}--change-pass-24:before { content: '\e907'; }
+
+.#{$icon-fonts}--change-pass-100:before { content: '\e908'; }
+
+.#{$icon-fonts}--circle-30:before { content: '\e90a'; }
+
+.#{$icon-fonts}--circle:before { content: '\e90b'; }
+
+.#{$icon-fonts}--clock:before { content: '\e90c'; }
+
+.#{$icon-fonts}--cutlery:before { content: '\e90d'; }
+
+.#{$icon-fonts}--delete:before { content: '\e90e'; }
+
+.#{$icon-fonts}--down:before { content: '\e919'; }
+
+.#{$icon-fonts}--edit-18:before { content: '\e91a'; }
+
+.#{$icon-fonts}--edit-24:before { content: '\e91b'; }
+
+.#{$icon-fonts}--edit-30:before { content: '\e91c'; }
+
+.#{$icon-fonts}--email:before { content: '\e91d'; }
+
+.#{$icon-fonts}--event:before { content: '\e91e'; }
+
+.#{$icon-fonts}--favorite-24:before { content: '\e91f'; }
+
+.#{$icon-fonts}--favorite-30:before { content: '\e920'; }
+
+.#{$icon-fonts}--favorited-24:before { content: '\e921'; }
+
+.#{$icon-fonts}--favorited-30:before { content: '\e922'; }
+
+.#{$icon-fonts}--location:before { content: '\e923'; }
+
+.#{$icon-fonts}--logout:before { content: '\e95c'; }
+
+.#{$icon-fonts}--maps:before { content: '\e925'; }
+
+.#{$icon-fonts}--member:before { content: '\e926'; }
+
+.#{$icon-fonts}--menu-30:before { content: '\e927'; }
+
+.#{$icon-fonts}--menu:before { content: '\e928'; }
+
+.#{$icon-fonts}--microphone:before { content: '\e929'; }
+
+.#{$icon-fonts}--notick:before { content: '\e92a'; }
+
+.#{$icon-fonts}--off-pass:before { content: '\e92b'; }
+
+.#{$icon-fonts}--phone-30:before { content: '\e92c'; }
+
+.#{$icon-fonts}--phone:before { content: '\e92d'; }
+
+.#{$icon-fonts}--rate:before { content: '\e932'; }
+
+.#{$icon-fonts}--remove:before { content: '\e934'; }
+
+.#{$icon-fonts}--right-arrow:before { content: '\e936'; }
+
+.#{$icon-fonts}--save:before { content: '\e937'; }
+
+.#{$icon-fonts}--search-30:before { content: '\e938'; }
+
+.#{$icon-fonts}--search:before { content: '\e939'; }
+
+.#{$icon-fonts}--settai:before { content: '\e93a'; }
+
+.#{$icon-fonts}--setting:before { content: '\e95b'; }
+
+.#{$icon-fonts}--show-pass:before { content: '\e949'; }
+
+.#{$icon-fonts}--star-18:before { content: '\e94a'; }
+
+.#{$icon-fonts}--star-24:before { content: '\e94b'; }
+
+.#{$icon-fonts}--star-28:before { content: '\e94b'; }
+
+.#{$icon-fonts}--starline-28:before { content: '\e94c'; }
+
+.#{$icon-fonts}--status-40:before { content: '\e94e'; }
+
+.#{$icon-fonts}--status:before { content: '\e94f'; }
+
+.#{$icon-fonts}--telephone:before { content: '\e950'; }
+
+.#{$icon-fonts}--tick:before { content: '\e951'; }
+
+.#{$icon-fonts}--time-30:before { content: '\e954'; }
+
+.#{$icon-fonts}--time-40:before { content: '\e955'; }
+
+.#{$icon-fonts}--todo:before { content: '\e958'; }
+
+.#{$icon-fonts}--yen:before { content: '\e959'; }
+
+.#{$icon-fonts}--camera:before { content: '\e95a'; }
+
+.#{$icon-fonts}--arrow-right:before { content: '\e91f'; }
+
+.#{$icon-fonts}--arrow-down:before { content: '\e920'; }
+
+.#{$icon-fonts}--sort-up:before { content: '\e937'; }
+
+.#{$icon-fonts}--sort-down:before { content: '\e94d'; }
+
+.#{$icon-fonts}--photo-camera:before { content: '\e923'; }
+
+.#{$icon-fonts}--cancel1:before { content: '\e96c'; }
+
+.#{$icon-fonts}--icon-calendar:before { content: '\e960'; }
+
+.#{$icon-fonts}--chevron-up:before { content: '\e961'; }
+
+.#{$icon-fonts}--chevron-down:before { content: '\e962'; }
+
+.#{$icon-fonts}--status1:before { content: '\e963'; }
+
+.#{$icon-fonts}--participant:before { content: '\e964'; }
+
+.#{$icon-fonts}--gift:before { content: '\e965'; }
+
+.#{$icon-fonts}--menu-setting:before { content: '\e966'; }
+
+.#{$icon-fonts}--gift1:before { content: '\e967'; }
+
+.#{$icon-fonts}--time1:before { content: '\e968'; }
+
+.#{$icon-fonts}--mail:before { content: '\e969'; }
+
+.#{$icon-fonts}--noti:before { content: '\e96a'; }
+
+.#{$icon-fonts}--logout2:before { content: '\e95d'; }
+
+.#{$icon-fonts}--dashboard:before { content: '\e96b'; }
+
+.#{$icon-fonts}--service:before { content: '\e96d'; }
+
+.#{$icon-fonts}--icon-circle:before { content: '\e96f'; }
+
+.#{$icon-fonts}--check:before { content: '\e96e'; }
+
+.#{$icon-fonts}--nt-check:before { content: '\e970'; }
+
+.#{$icon-fonts}--download:before { content: '\e971'; }
+
+.#{$icon-fonts}--gift-box:before { content: '\e972'; }
+
+.#{$icon-fonts}--error:before { content: '\e973'; }
+
+.#{$icon-fonts}--arrow-right1:before { content: '\e974'; }
+
+.#{$icon-fonts}--copy:before { content: '\e975'; }
+
+.#{$icon-fonts}--download1:before { content: '\e976'; }
+
+.#{$icon-fonts}--chevron-left:before { content: '\e977'; }
+
+.#{$icon-fonts}--chevron-right:before { content: '\e95e'; }
+
+.#{$icon-fonts}--icon-add:before { content: '\e978'; }
+
+.#{$icon-fonts}--icon-light:before { content: '\e979'; }
+
+.#{$icon-fonts}--icon-finder:before { content: '\e97a'; }
+
+.#{$icon-fonts}--icon-download:before { content: '\e97b'; }
+
+.#{$icon-fonts}--icon-checked:before { content: '\e97c'; }
+
+.#{$icon-fonts}--icon-bell:before { content: '\e97d'; }
+
+.#{$icon-fonts}--icon-cancel:before { content: '\e97e'; }
+
+.#{$icon-fonts}--icon-logout:before { content: '\e97f'; }
+
+.#{$icon-fonts}--icon-sort:before { content: '\e980'; }

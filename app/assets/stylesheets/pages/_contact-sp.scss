@@ -1,0 +1,69 @@
+// ======================================================
+// Pages :: Contact SP
+// ======================================================
+
+.contact-sp {
+  padding: 20px;
+
+  &__img {
+    margin-bottom: 35px;
+  }
+
+  &__des {
+    color: $blue-light;
+    font-weight: $font-weight-base + 100;
+    margin-bottom: 25px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .form-customize {
+    &--textarea {
+      margin-bottom: 40px;
+
+      .form-control {
+        min-height: 115px;
+      }
+    }
+  }
+
+  .custom-selectbox .drop-select {
+    &__label {
+      font-weight: $font-weight-base;
+    }
+  }
+}
+
+.contact-sp-complete {
+  padding-top: 10px;
+
+  &__icon {
+    margin-bottom: 45px;
+
+    .circle-icon {
+      background: $royalblue;
+
+      &:after {
+        border-top-color: $royalblue;
+      }
+
+      .icon-fonts {
+        font-size: $font-size-large + 2;
+      }
+    }
+  }
+
+  &__title {
+    color: $blue-light;
+    font-size: $font-size-medium;
+    font-weight: $font-weight-medium;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__message {
+    color: $gray-medium;
+    font-weight: $font-weight-base + 100;
+    text-align: center;
+  }
+}

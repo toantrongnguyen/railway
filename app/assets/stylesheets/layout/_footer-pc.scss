@@ -1,0 +1,43 @@
+// ======================================================
+// Layout :: Footer PC
+// ======================================================
+
+.footer {
+  flex: 0 0 auto;
+
+  &__link {
+    background: $white-dark-1;
+    height: 89px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 48px;
+    }
+
+    a {
+      color: $gray-medium;
+      font-weight: $font-weight-medium;
+      padding: 8px;
+      letter-spacing: 5px;
+      border-bottom: 1px solid transparent;
+      transition: .3s ease-out;
+
+      &:hover {
+        border-bottom: 1px solid $gray-medium;
+        transition: .3s ease-out;
+      }
+    }
+  }
+
+  &__copyright {
+    background: $blue-large;
+    color: $gray-small;
+    height: 52px;
+  }
+
+  &__logo {
+    @include size(59px, 32px);
+    margin: 0 25px 0 15px;
+  }
+}

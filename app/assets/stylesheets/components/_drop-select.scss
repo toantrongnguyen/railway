@@ -1,0 +1,251 @@
+// ======================================================
+// Components :: Drop Select
+// ======================================================
+
+.drop-select {
+  $this: &;
+  position: relative;
+
+  &__title {
+    background: url('#{$path-image}/icon-down.png') right 15px center no-repeat;
+    border: 1px solid $gray-small;
+    border-radius: $border-radius-normal;
+    color: $blue-light;
+    cursor: pointer;
+    display: block;
+    height: 45px;
+    margin-bottom: 20px;
+    padding: 12px 30px 10px 11px;
+
+    .icon-fonts {
+      color: $gainsboro;
+      font-size: $font-size-large;
+      line-height: 21px;
+      margin-right: 10px;
+
+      &--check {
+        color: $orange;
+      }
+    }
+  }
+
+  &--status {
+    #{$this}__title {
+      background: url('#{$path-image}/icon-down.svg') $blue-medium right 15px center no-repeat;
+      border: 1px solid $blue-medium;
+      color: $white;
+      padding: 11px 30px 10px 11px;
+
+      &:hover {
+        color: $white;
+      }
+
+      .icon-fonts {
+        &--nt-check {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &__item {
+    color: $blue-light;
+    display: block;
+    padding: 12px 11px 10px;
+
+    &.active {
+      background-color: $white-dark;
+    }
+
+    .icon-fonts {
+      color: $orange;
+      font-size: $font-size-large;
+      margin-right: 10px;
+
+      &--nt-check {
+        color: $gainsboro;
+      }
+    }
+
+    &:first-child {
+      border-top: 0;
+    }
+  }
+
+  &__title,
+  &__item {
+    &:hover {
+      color: $blue-light;
+    }
+
+    .title {
+      @include text-truncate;
+      flex: 1;
+    }
+  }
+
+  &__list {
+    background: $white;
+    border: 1px solid $gray-small;
+    border-radius: 0 0 $border-radius-normal $border-radius-normal;
+    border-top: 0;
+    display: none;
+    left: 0;
+    max-height: 265px;
+    overflow: auto;
+    position: absolute;
+    top: 45px;
+    width: 100%;
+    z-index: 9;
+  }
+
+  &.show {
+    #{$this}__list {
+      display: block;
+    }
+
+    #{$this}__title {
+      border-radius: $border-radius-normal $border-radius-normal 0 0;
+      box-shadow: none;
+    }
+  }
+}
+
+.custom-selectbox {
+  &--blue {
+    .drop-select {
+      background-color: $blue-dark;
+
+      &__title {
+        background: url('#{$path-image}/down.svg') right 15px center no-repeat;
+        border: 1px solid $blue-lighter;
+        color: $white;
+
+        &:focus {
+          border: 1px solid $white;
+        }
+      }
+
+      &__list {
+        background-color: $blue-dark;
+      }
+
+      &__item {
+        color: $white;
+
+        &.active {
+          background-color: $blue-medium-2;
+        }
+      }
+    }
+  }
+
+  .drop-select {
+    &__label {
+      color: $blue-lightest;
+      display: block;
+      font-size: $font-size-small;
+      font-weight: $font-weight-bold;
+      margin: 0 0 5px 15px;
+      position: relative;
+      text-align: left;
+      word-break: break-word;
+
+      .required {
+        color: $red;
+        margin-left: 5px;
+        position: absolute;
+        top: -5px;
+      }
+    }
+  }
+
+  &--condition {
+    margin-bottom: 30px;
+
+    .drop-select {
+      &__label {
+        color: $blue-light;
+        font-weight: $font-weight-base;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &--white {
+    text-align: left;
+    width: 100%;
+
+    .drop-select {
+      &__label {
+        color: $gray-small;
+      }
+    }
+  }
+
+  &--deadline {
+    .drop-select {
+      &__label {
+        color: $gray-small;
+        font-weight: $font-weight-base;
+      }
+
+      &__title {
+        &.show {
+          border-radius: $border-radius-normal $border-radius-normal 0 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &--not-bd {
+    .drop-select {
+      &__label {
+        color: $gray-medium;
+        font-size: $font-size-small;
+        font-weight: $font-weight-base;
+        margin: 8px 0 0;
+      }
+
+      &__title {
+        border: 0;
+        border-bottom: 1px solid $white-dark;
+        border-radius: 0;
+        height: 31px;
+        margin-bottom: 17px;
+        padding: 0;
+      }
+
+      &__list {
+        top: 31px;
+      }
+    }
+  }
+
+  &--complete {
+    .drop-select {
+      &__label {
+        color: $gray-medium;
+        font-size: $font-size-small;
+        font-weight: $font-weight-base;
+        margin: 8px 0 5px;
+      }
+
+      &__title {
+        background: none;
+        border-radius: $border-radius-normal;
+        margin-bottom: 30px;
+        cursor: none;
+      }
+    }
+  }
+
+  &--complete-view {
+    .drop-select {
+      &__title {
+        background: none;
+      }
+    }
+  }
+}

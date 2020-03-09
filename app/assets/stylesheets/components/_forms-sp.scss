@@ -1,0 +1,320 @@
+// ======================================================
+// Components :: Forms SP
+// ======================================================
+
+.form-customize {
+  margin-bottom: 15px;
+  position: relative;
+  width: 100%;
+  text-align: left;
+
+  .label-title {
+    color: $blue-lightest;
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
+    margin: 0 0 5px 10px;
+    position: relative;
+    text-align: left;
+    word-break: break-word;
+
+    .required {
+      color: $red;
+      margin-left: 5px;
+      position: absolute;
+      top: -5px;
+    }
+  }
+
+  .form-control {
+    background-color: $blue-dark;
+    border-radius: $border-radius-base + 1;
+    border: 1px solid $blue-lighter;
+    color: $white;
+    font-size: $font-size-base;
+    height: 45px;
+    padding: 12px;
+
+    &::placeholder {
+      color: $blue-lightest;
+    }
+
+    &:focus {
+      border-color: $white;
+      box-shadow: none;
+    }
+
+    &[readonly],
+    &[disabled] {
+      color: $white;
+      pointer-events: none;
+    }
+  }
+
+  .form-input {
+    position: relative;
+
+    .form-control {
+      padding-right: 42px;
+    }
+  }
+
+  .input-addon {
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+
+    .icon-fonts {
+      color: $blue-lightest;
+      font-size: 30px;
+    }
+  }
+
+  .custom-select {
+    background: url('../images/down.svg') right 15px center no-repeat;
+    color: $blue-lightest;
+  }
+
+  &--title-blue {
+    margin-bottom: 30px;
+
+    .label-title {
+      color: $blue-light;
+      font-weight: $font-weight-base;
+      margin-bottom: 15px;
+    }
+
+    .form-control {
+      border: 1px solid $gray-small;
+      color: $blue-light;
+      background: $white;
+
+      &::placeholder {
+        color: $gray-small;
+      }
+
+      &:focus {
+        border: 1px solid $gray-small;
+      }
+    }
+  }
+
+  &--has-value {
+    margin-bottom: 20px;
+
+    .label-title {
+      color: $gray-light-3;
+      font-weight: $font-weight-base;
+
+      .label {
+        color: $red;
+        font-size: $font-size-medium;
+      }
+    }
+
+    .form-control {
+      border: 1px solid $gray-small;
+      color: $blue-light;
+      background: $white;
+
+      &::placeholder {
+        color: $gray-small;
+      }
+
+      &:focus {
+        border: 1px solid $gray-small;
+      }
+
+      &--datepicker {
+        border-radius: 0 6px 6px 0;
+        width: 117px;
+        text-align: center;
+      }
+
+      &[readonly],
+      &[disabled] {
+        color: $blue-light;
+      }
+    }
+
+    .custom-select {
+      background: url('../images/icon-down.png') right 15px center no-repeat;
+    }
+
+    .input-addon {
+      .icon-fonts {
+        color: $royalblue;
+      }
+    }
+  }
+
+  &--project {
+    .form-control {
+      background: $slategray;
+    }
+  }
+
+  &--datepicker {
+    .form-control {
+      &::placeholder {
+        color: $gray-small;
+      }
+    }
+  }
+
+  &__datepicker {
+    width: calc(100% - 116px);
+    position: relative;
+
+    .form-control {
+      border-radius: 6px 0 0 6px;
+      background: transparent;
+    }
+
+    .input-append {
+      @include position(absolute, 1px, 16px, auto, auto);
+      font-family: $font-family-icons;
+      color: $gray-small;
+      font-size: $font-size-large + 10;
+      cursor: pointer;
+      margin: 0;
+    }
+  }
+
+  &--has-before {
+    width: 100%;
+    margin-bottom: 0;
+
+    .form-control {
+      padding: 16px 0;
+      height: 56px;
+      border-radius: 0;
+      border: 0;
+      border-bottom: 1px solid $white-dark;
+      background: transparent;
+
+      &:focus {
+        border: 0;
+        border-bottom: 1px solid $white-dark;
+      }
+    }
+
+    .input-append {
+      @include position(absolute, 8px, 16px, auto, auto);
+      font-family: $font-family-icons;
+      color: $gray-small;
+      font-size: $font-size-large + 10;
+      cursor: pointer;
+      margin: 0;
+    }
+
+    .bootstrap-datetimepicker-widget {
+      width: 100%;
+    }
+  }
+
+  &--has-icon {
+    .dropdown-toggle {
+      justify-content: flex-start;
+      background: url('../images/icon-down.png') right 15px center no-repeat;
+    }
+  }
+
+  &--textarea {
+    position: relative;
+    margin-bottom: 57px;
+
+    .form-control {
+      min-height: 224px;
+    }
+  }
+
+  .input-group-append {
+    width: 116px;
+  }
+
+  &--edit {
+    border-bottom: 1px solid $gray-light-3;
+    padding-bottom: 4px;
+    margin-bottom: 22px;
+
+    .form-control {
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      height: auto;
+      color: $blue-light;
+      background: $white;
+    }
+
+    .label-title {
+      margin-left: 0;
+      color: $gray-light-3;
+    }
+  }
+
+  &--w-percent-50 {
+    width: calc(50% - 7px);
+    position: relative;
+
+    .label-title {
+      margin-left: 0;
+    }
+  }
+}
+
+.form-error {
+  .form-control {
+    border-color: $red;
+  }
+}
+
+.error-notice {
+  color: $blue-lightest;
+  font-size: $font-size-small;
+  margin-top: 5px;
+  word-break: break-word;
+}
+
+.form-append-button {
+  .form-customize {
+    margin: 0 18px 0 0;
+    width: calc(100% - 84px);
+  }
+
+  .checkbox {
+    width: 66px;
+    color: $gray-medium;
+  }
+
+  .form-control {
+    &::placeholder {
+      color: $gray-small;
+    }
+  }
+}
+
+.form-control {
+  &--textarea-edit {
+    border: 0;
+    border-radius: 0;
+    color: $blue-light;
+    font-size: $font-size-base;
+    line-height: 21px;
+    resize: none;
+    overflow: hidden;
+    padding: 4px 0 0;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      border: 0;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

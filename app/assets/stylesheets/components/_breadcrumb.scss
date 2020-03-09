@@ -1,0 +1,22 @@
+// ======================================================
+// Components :: Breadcrumb
+// ======================================================
+
+.breadcrumb {
+  background: none;
+  padding: 56px 0 0;
+
+  &-item {
+    a {
+    }
+
+    + .breadcrumb-item {
+      padding-left: 12px;
+
+      &:before {
+        content: '>';
+        padding-right: 12px;
+      }
+    }
+  }
+}

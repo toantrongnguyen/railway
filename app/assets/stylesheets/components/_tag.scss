@@ -1,0 +1,65 @@
+.tag {
+  > li {
+    list-style: none;
+    display: inline-block;
+    margin-bottom: 10px;
+    background: $white-dark;
+    border-radius: 10px;
+
+    a {
+      font-size: $font-size-small;
+      color: $gray-medium;
+      padding: 1px 13px;
+      display: block;
+    }
+
+    &:nth-child(3n+2) {
+      margin: 0 10px 10px;
+    }
+  }
+
+  &--conditions {
+    > li {
+      border-radius: 17px;
+
+      a {
+        padding: 7px 21px;
+      }
+    }
+
+    .item-active {
+      background: $blue;
+
+      a {
+        color: $white;
+      }
+    }
+  }
+}
+
+.button-group-pills {
+  .btn {
+    background: $white-dark;
+    color: $gray-medium;
+    border-radius: 17px;
+    font-size: $font-size-base;
+    padding: 5px 21px 4px;
+    cursor: pointer;
+    margin: 0 10px 10px 0;
+
+    input[type='checkbox'] {
+      position: absolute;
+      clip: rect(0, 0, 0, 0);
+      pointer-events: none;
+    }
+
+    &.active {
+      color: $white;
+      background: $blue;
+    }
+
+    &.focus {
+      box-shadow: none;
+    }
+  }
+}

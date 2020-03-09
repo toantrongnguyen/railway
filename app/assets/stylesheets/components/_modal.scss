@@ -1,0 +1,134 @@
+// ======================================================
+// Components :: Modal
+// ======================================================
+
+.modal {
+  &-body {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: $font-size-large + 2;
+    color: $blue-light;
+    margin: 25px 0 4px;
+    font-weight: $font-weight-bold;
+    line-height: 30px;
+  }
+
+  &__des {
+    color: $gray-medium;
+    font-size: $font-size-base - 1;
+    line-height: 20px;
+  }
+
+  &__icon {
+    @include circle(68px);
+    background: $red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto 0;
+    position: relative;
+
+    .icon-fonts {
+      color: $white;
+      font-size: $font-size-large + 8;
+
+      &--logout {
+        font-size: $font-size-large * 2;
+      }
+
+      &--icon-cancel {
+        font-size: $font-size-medium * 3;
+      }
+    }
+
+    &:after {
+      @include position(absolute, auto, auto, -2px, 4px);
+      content: '';
+      border-top: 14px solid $red;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      transform: rotate(45deg);
+    }
+  }
+
+  &-footer {
+    border: 0;
+    justify-content: center;
+    padding: 9px 20px 28px;
+  }
+
+  &-content {
+    position: relative;
+    border: 0;
+    background: $white;
+    box-shadow: 0 0 20px $box-shadow-normal;
+    border-radius: $border-radius-normal;
+
+    &:after {
+      @include abs-center-hoz;
+      content: '';
+      width: calc(100% - 24px);
+      height: 10px;
+      background: $white-dark;
+      opacity: .7;
+      bottom: -10px;
+      z-index: -1;
+      border-radius: 0 0 5px 5px;
+    }
+  }
+
+  &-dialog {
+    @include media-breakpoint-down(xs) {
+      margin: auto 20px;
+    }
+  }
+
+  &-open {
+    height: 100vh;
+    position: fixed;
+    width: 100vw;
+  }
+
+  &-dialog-centered {
+    &:before {
+      height: auto;
+    }
+  }
+
+  &-title {
+    font-size: $font-size-medium;
+    font-weight: $font-weight-bold;
+    color: $blue-light;
+  }
+
+  &-header {
+    padding: 15px;
+    border-bottom: 3px solid $slategray;
+  }
+
+  &__back {
+    font-size: $font-size-small;
+    color: $gray-medium;
+    background: none;
+    display: flex;
+    align-items: center;
+
+    .icon-fonts {
+      color: $blue-medium;
+      font-size: $font-size-small;
+      margin-right: 3px;
+    }
+  }
+}
+
+.modal-step2 {
+  z-index: 1052;
+}
+
+.modal-backdrop.show {
+  & + .modal-backdrop.show {
+    z-index: 1051;
+  }
+}
