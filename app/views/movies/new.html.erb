@@ -1,12 +1,50 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="#">ダッシュボード</a></li>
-          <li class="breadcrumb-item active" aria-current="page"><a href="#">〇〇商事取締役と会食</a></li>
-        </ol>
-      </nav>
+      <div class="project">
+        <h2 class="project__title">Create new movie</h2>
+        <div class="project__content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group form-customize form-customize--has-value">
+                <label class="label-title" for="name">Movie title
+                </label>
+                <input class="form-control" type="text" id="name" placeholder="Movie title">
+              </div>
+              <div class="form-group form-customize form-customize--has-value">
+                <label class="label-title" for="release_date">Release date
+                </label>
+                  <input class="form-control js-datepicker" type="text" placeholder="YYYY/MM/DD(WD)" id="datetimepicker">
+              </div>
+              <div class="form-group form-customize form-customize--has-value">
+                <label class="label-title">開催場所</label>
+                <div class="form-append-button d-flex justify-content-between align-items-center">
+                  <div class="form-group form-customize">
+                    <input class="form-control" type="text" placeholder="例）東京、銀座、神田駅">
+                  </div>
+                  <label class="checkbox d-flex align-items-center">
+                    <input class="input-checkbox" type="checkbox" checked="checked"><span class="checkmark"></span><span class="title">未定</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group form-customize form-customize--textarea form-customize--has-value">
+                <label class="label-title" for="description">Description
+                </label>
+                <textarea class="form-control form-control--textarea" id="description"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="button-group d-flex justify-content-center">
+          <button class="button button--bg-white button--medium mr-3" data-toggle="modal" data-target="#modalCancel"><i class="fa fa-arrow-left mr-1"></i>Back
+          </button>
+          <button class="button button--blue button--medium ml-1"><i class="fa fa-check mr-1"></i>Save
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+<%= javascript_include_tag "movies" %>
