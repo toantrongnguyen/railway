@@ -14,7 +14,7 @@
               <div class="form-group form-customize form-customize--has-value">
                 <label class="label-title" for="release_date">Release date
                 </label>
-                  <input class="form-control js-datepicker" type="text" placeholder="YYYY/MM/DD(WD)" id="datetimepicker">
+                  <input class="form-control js-datepicker" data-provide="datepicker" type="text" placeholder="YYYY/MM/DD(WD)" id="datetimepicker">
               </div>
               <div class="form-group form-customize form-customize--has-value">
                 <label class="label-title">開催場所</label>
@@ -47,4 +47,7 @@
     </div>
   </div>
 </div>
-<%= javascript_include_tag "movies" %>
+
+<%= javascript_include_tag "datepicker", "data-turbolinks-track" => "reload" %>
+<%= stylesheet_link_tag "datepicker", media: "all", "data-turbolinks-track" => "reload" %>
+<%= javascript_include_tag params[:controller] %> 

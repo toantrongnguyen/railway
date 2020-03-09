@@ -3,15 +3,11 @@
 // ======================================================
 
 body {
-  display: flex;
-  flex-direction: column;
   font-family: $font-family-base;
   font-size: $font-size-base;
   -webkit-font-smoothing: antialiased;
   font-weight: $font-weight-light;
   min-height: 100vh;
-  word-break: break-all;
-  word-wrap: break-word;
 }
 
 img {
@@ -124,20 +120,3 @@ strong {
   }
 }
 
-.main {
-  display: flex;
-  flex: 1;
-}
-
-.row {
-  &--custom {
-    margin-left: -10px;
-    margin-right: -10px;
-
-    > .col,
-    > [class*='col-'] {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-  }
-}
