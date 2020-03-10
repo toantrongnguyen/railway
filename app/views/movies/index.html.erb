@@ -15,17 +15,19 @@
                 <div class="tab-pane active" id="todo-list">
                   <div class="todo">
                     <div class="todo__more text-center">
-                  <a href="<%= new_movie_path %>"><i class="fa fa-3x fa-plus-circle"></i></a></div>
+                    <a href="<%= new_movie_path %>"><i class="fa fa-3x fa-plus-circle"></i></a></div>
                     <ul class="todo__list js-sortable ui-sortable">
-                      <li class="todo__item d-flex align-items-center justify-content-between js-todo-list-item">
-                        <div class="d-flex align-items-center js-todo-title" style="max-width: 975.266px;">
-                          <label class="checkbox d-flex align-items-center" for="checkbox1">
-                            <input class="input-checkbox" type="checkbox" name="checkbox1" id="checkbox1"><span class="checkmark"></span><span class="title"></span>
-                          </label><a class="title" href="#" data-toggle="modal" data-target="#TodoDateTime">Landing on</a>
-                        </div>
-                        <div class="todo__box-item js-todo-item d-flex align-items-center justify-content-end"><span class="todo__day">2019/10/05</span>
-                        </div>
-                      </li>
+                      <% @movies.each do |movie| %>
+                        <li class="todo__item d-flex align-items-center justify-content-between js-todo-list-item">
+                          <div class="d-flex align-items-center js-todo-title" style="max-width: 975.266px;">
+                            <label class="checkbox d-flex align-items-center" for="checkbox1">
+                              <input class="input-checkbox" type="checkbox" name="checkbox1" id="checkbox1"><span class="checkmark"></span><span class="title"></span>
+                            </label><a class="title" href="<%= movie_path movie %>" data-toggle="modal" data-target="#TodoDateTime"><%= movie.title %></a>
+                          </div>
+                          <div class="todo__box-item js-todo-item d-flex align-items-center justify-content-end"><span class="todo__day"><%= movie.created_at %></span>
+                          </div>
+                        </li>
+                      <% end %>
                     </ul>
                   </div>
                 </div>

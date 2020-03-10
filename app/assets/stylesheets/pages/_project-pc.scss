@@ -127,7 +127,6 @@
 
   &__souvenir {
     padding: 30px 0;
-    border: solid $snow;
     border-width: 3px 0;
   }
 
@@ -141,10 +140,6 @@
     color: $blue-light;
     margin-bottom: 10px;
     font-weight: $font-weight-bold;
-  }
-
-  &__textarea {
-    margin-top: 40px;
   }
 
   &__souvenir-choice {
@@ -203,7 +198,7 @@
 }
 
 .list-detail {
-  padding: 25px 15px 30px;
+  padding: 25px 0 30px;
 
   &__item {
     width: calc(100% / 3);
