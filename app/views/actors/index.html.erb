@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="project project--detail">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="project__title">Actors List</h2>
+              <div class="project__tabs tab-pane" id="project-overview"></div>
+              <div class="tab-pane active" id="todo-list">
+                <div class="todo">
+                  <div class="todo__more text-center">
+                  <a href="<%= new_actor_path %>"><i class="fa fa-3x fa-plus-circle"></i></a></div>
+                  <ul class="todo__list">
+                    <% @actors.each do |actor| %>
+                      <li class="todo__item d-flex align-items-center justify-content-between js-todo-list-item">
+                        <div class="d-flex align-items-center js-todo-title" style="max-width: 975.266px;">
+                          <a class="title" href="<%= actor_path actor %>" data-toggle="modal" data-target="#TodoDateTime"><%= actor.name %></a>
+                        </div>
+                        <div class="todo__box-item js-todo-item d-flex align-items-center justify-content-end"><span class="todo__day"><%= actor.created_at %></span>
+                        </div>
+                      </li>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

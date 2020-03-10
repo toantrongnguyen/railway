@@ -1,0 +1,46 @@
+<%= form_with model: @actor, local: true do |form| %>
+  <div id="error-container" class="mt-4">
+    <% @actor.errors.full_messages.each do |error| %>
+      <div class="alert alert-danger"><%= error %></div>
+    <% end %>
+  </div>
+  <div class="project__content">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group form-customize form-customize--has-value">
+          <%= form.label :name, "Actor name", class: "label-title" %>
+          <%= form.text_field :name, class: "form-control" %>
+        </div>
+        <div class="form-group form-customize form-customize--has-value">
+          <%= form.label :birthday, "Birthday", class: "label-title" %>
+          <%= form.text_field :birthday, class: "form-control input-datepicker" %>
+        </div>
+        <div class="form-group form-customize form-customize--has-value">
+          <%= form.label :gender, "Gender", class: "label-title" %>
+          <div class="form-group">
+            <%= form.radio_button :gender, 0 %>
+            <%= form.label :gender_0, "Female", class: "mr-4" %>
+            <%= form.radio_button :gender, 1 %>
+            <%= form.label :gender_1, "Male" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group form-customize form-customize--textarea form-customize--has-value">
+          <%= form.label :biography, "Biography", class: "label-title" %>
+          <%= form.text_area :biography, class: "form-control form-control--textarea" %>
+        </div>
+      </div>
+      </div>
+  </div>
+  <div class="button-group d-flex justify-content-center">
+    <a href="<%= back_to_link %>" class="button button--bg-white button--medium button--base mr-3"><i class="icon-fonts icon-fonts--edit-18 fa fa-arrow-left"></i>Back
+    </a>
+    <button type="submit" class="button button--blue button--medium ml-1"><i class="fa fa-check mr-1"></i>Save
+    </button>
+  </div>
+<% end %>
+
+<%= javascript_include_tag "datepicker", "data-turbolinks-track" => "reload" %>
+<%= stylesheet_link_tag "datepicker", media: "all", "data-turbolinks-track" => "reload" %>
+<%= javascript_include_tag params[:controller] %>
