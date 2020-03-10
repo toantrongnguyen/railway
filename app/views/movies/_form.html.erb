@@ -1,0 +1,45 @@
+<%= form_with model: @movie do |form| %>
+  <div id="error-container" class="mt-4">
+  </div>
+  <div class="project__content">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group form-customize form-customize--has-value">
+          <%= form.label :title, "Movie title", class: "label-title" %>
+          <%= form.text_field :title, class: "form-control" %>
+        </div>
+        <div class="form-group form-customize form-customize--has-value">
+          <%= form.label :release_date, "Release date", class: "label-title" %>
+          <%= form.text_field :release_date, class: "form-control input-datepicker" %>
+        </div>
+        <div class="form-group form-customize form-customize--has-value">
+          <%= form.label :actors, "Actors", class: "label-title" %>
+          <div class="form-append-button d-flex justify-content-between align-items-center">
+            <div class="form-group form-customize">
+              <input class="form-control" type="text" placeholder="例）東京、銀座、神田駅">
+            </div>
+            <label class="checkbox d-flex align-items-center">
+              <input class="input-checkbox" type="checkbox" checked="checked"><span class="checkmark"></span><span class="title">未定</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group form-customize form-customize--textarea form-customize--has-value">
+          <%= form.label :description, "Description", class: "label-title" %>
+          <%= form.text_area :description, class: "form-control form-control--textarea" %>
+        </div>
+      </div>
+      </div>
+  </div>
+  <div class="button-group d-flex justify-content-center">
+    <a href="<%= back_to_link %>" class="button button--bg-white button--medium button--base mr-3"><i class="icon-fonts icon-fonts--edit-18 fa fa-arrow-left"></i>Back
+    </a>
+    <button type="submit" class="button button--blue button--medium ml-1"><i class="fa fa-check mr-1"></i>Save
+    </button>
+  </div>
+<% end %>
+
+<%= javascript_include_tag "datepicker", "data-turbolinks-track" => "reload" %>
+<%= stylesheet_link_tag "datepicker", media: "all", "data-turbolinks-track" => "reload" %>
+<%= javascript_include_tag params[:controller] %> 

@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.all
+    @movies = Movie.order(created_at: :desc).all
   end
 
   def show
@@ -11,10 +11,29 @@ class MoviesController < ApplicationController
     @movie = Movie.new
   end
 
+  def edit
+    @movie = Movie.find(params[:id])
+  end
+
   def create
     @movie = Movie.create(movie_params)
 
-    redirect_to @movie
+    if @movie.valid?
+      redirect_to @movie
+    else
+      render json: @movie.errors, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    @movie = Movie.find(params[:id])
+    @movie.update(movie_params)
+
+    if @movie.valid?
+      redirect_to @movie
+    else
+      render json: @movie.errors, status: :unprocessable_entity
+    end
   end
 
   private
