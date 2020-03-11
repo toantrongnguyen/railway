@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.order(created_at: :desc).all
+    @movies = MovieService.listAll
   end
 
   def show
@@ -13,6 +13,7 @@ class MoviesController < ApplicationController
 
   def edit
     @movie = MovieService.find(params[:id])
+    @actors = ActorService.listAll
   end
 
   def create

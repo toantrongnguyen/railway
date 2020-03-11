@@ -4,7 +4,7 @@ class ActorService
       Actor.new
     end
 
-    def getList
+    def listAll
       Actor.order(created_at: :desc).all
     end
 

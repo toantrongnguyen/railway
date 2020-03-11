@@ -1,6 +1,6 @@
 class ActorsController < ApplicationController
   def index
-    @actors = ActorService.getList
+    @actors = ActorService.listAll
   end
 
   def show

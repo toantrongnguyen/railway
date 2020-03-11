@@ -10,3 +10,5 @@ $(document).on('ajax:error', function (event) {
 $('.input-datepicker').datepicker({
   format: 'yyyy-mm-dd',
 })
+
+$('.select-actor').select2();
