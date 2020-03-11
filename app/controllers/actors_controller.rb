@@ -1,22 +1,22 @@
 class ActorsController < ApplicationController
   def index
-    @actors = Actor.order(created_at: :desc).all
+    @actors = ActorService.getList
   end
 
   def show
-    @actor = Actor.find(params[:id])
+    @actor = ActorService.find(params[:id])
   end
 
   def new
-    @actor = Actor.new
+    @actor = ActorService.new
   end
 
   def edit
-    @actor = Actor.find(params[:id])
+    @actor = ActorService.find(params[:id])
   end
 
   def create
-    @actor = Actor.create(actor_params)
+    @actor = ActorService.create(actor_params)
 
     if @actor.valid?
       redirect_to @actor
@@ -26,19 +26,18 @@ class ActorsController < ApplicationController
   end
 
   def update
-    # puts 'he', actor_params[:profile]
-    # File.open(Rail.root.join('public', 'uploads'))
-    # @actor = Actor.find(params[:id])
-    # @actor.update(actor_params)
-    # if @actor.valid?
-    #   redirect_to @actor
-    # else
-    #   render :edit, status: :unprocessable_entity
-    # end
+    @actor = ActorService.find(params[:id])
+    @actor.update(actor_params)
+
+    if @actor.valid?
+      redirect_to @actor
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   private
     def actor_params
-      params.require(:actor).permit(:name, :biography, :birthday, :gender, :profile)
+      params.require(:actor).permit(:name, :biography, :birthday, :gender, :image)
     end
 end
