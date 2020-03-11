@@ -11,10 +11,7 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="user__profile">
-                        <label class="user__avatar"><img class="user__img" src="<%= @actor.image.attached? ? url_for(@actor.image) : '/images/img-avatar-default.png' %>">
-                          <div class="user__edit-avatar"><i class="icon-fonts icon-fonts--camera"></i>
-                          </div>
-                        </label>
+                        <img class="user__img" src="<%= @actor.image.attached? ? url_for(@actor.image) : '/images/img-avatar-default.png' %>">
                       </div>
                     </div>
                     <div class="col-md-6">
