@@ -4,19 +4,19 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @movie = Movie.find(params[:id])
+    @movie = MovieService.find(params[:id])
   end
 
   def new
-    @movie = Movie.new
+    @movie = MovieService.new
   end
 
   def edit
-    @movie = Movie.find(params[:id])
+    @movie = MovieService.find(params[:id])
   end
 
   def create
-    @movie = Movie.create(movie_params)
+    @movie = MovieService.create(movie_params)
 
     if @movie.valid?
       redirect_to @movie
@@ -26,7 +26,7 @@ class MoviesController < ApplicationController
   end
 
   def update
-    @movie = Movie.find(params[:id])
+    @movie = MovieService.find(params[:id])
     @movie.update(movie_params)
 
     if @movie.valid?
