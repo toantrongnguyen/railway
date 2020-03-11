@@ -7,6 +7,7 @@
   <div class="project__content">
     <div class="row">
       <div class="col-md-6">
+        <%= render 'profile', form: form %>
         <div class="form-group form-customize form-customize--has-value">
           <%= form.label :name, "Actor name", class: "label-title" %>
           <%= form.text_field :name, class: "form-control" %>

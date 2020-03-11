@@ -1,0 +1,12 @@
+<div class="user__profile">
+  <label class="user__avatar"><img class="user__img" src="/images/img-avatar-default.png">
+    <div class="user__edit-avatar"><i class="icon-fonts icon-fonts--camera"></i>
+    </div>
+    <%= form.file_field :profile, class: "user__upload" %>
+  </label>
+  <button type="button" class="button button--blue button--small mt-2">
+    <i class="icon-fonts icon-fonts--edit-18 fa fa-trash"></i>Remove avatar
+  </button>
+  <%# <div class="user__name"><a class="user__link" href="#!">山田孝之</a><span class="user__age">27歳</span></div>
+  <div class="user__company">(Sun Inc)</div> %>
+</div>

@@ -26,18 +26,19 @@ class ActorsController < ApplicationController
   end
 
   def update
-    @actor = Actor.find(params[:id])
-    @actor.update(actor_params)
-
-    if @actor.valid?
-      redirect_to @actor
-    else
-      render :edit, status: :unprocessable_entity
-    end
+    # puts 'he', actor_params[:profile]
+    # File.open(Rail.root.join('public', 'uploads'))
+    # @actor = Actor.find(params[:id])
+    # @actor.update(actor_params)
+    # if @actor.valid?
+    #   redirect_to @actor
+    # else
+    #   render :edit, status: :unprocessable_entity
+    # end
   end
 
   private
     def actor_params
-      params.require(:actor).permit(:name, :biography, :birthday, :gender)
+      params.require(:actor).permit(:name, :biography, :birthday, :gender, :profile)
     end
 end
