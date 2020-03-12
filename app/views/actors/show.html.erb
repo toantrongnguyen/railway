@@ -9,12 +9,12 @@
               <div class="tab-content">
                 <div class="project__tabs tab-pane active" id="project-overview">
                   <div class="row">
-                    <div class="col-md-6">
-                      <div class="user__profile">
+                    <div class="col-md-3">
+                      <div class="user__avatar mx-auto">
                         <img class="user__img" src="<%= @actor.image.attached? ? url_for(@actor.image) : '/images/img-avatar-default.png' %>">
                       </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-9">
                       <div class="project__detail">
                         <div class="project__souvenir">
                           <h3 class="project__sub-title">Actor</h3>

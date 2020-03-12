@@ -3,6 +3,10 @@ require 'date'
 class Actor < ApplicationRecord
   has_one_attached :image
 
+  has_many :casts
+
+  has_many :movies, through: :casts
+
   validates :name, :gender, presence: true
 
   def age

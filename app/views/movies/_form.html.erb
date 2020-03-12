@@ -15,17 +15,25 @@
         <div class="form-group form-customize form-customize--has-value">
           <%= form.label :actors, "Actors", class: "label-title" %>
           <div class="form-group form-customize">
-            <select class="form-control select-actor" type="text" placeholder="Search and select actor" multiple="multiple">
-              <%= @actors.each do |actor| %>
-                <option value="<%= actor.id %>"><%= actor.name %></option>
-              <% end %>
-            </select>
+            <%= select_tag(
+              "movie[actors]",
+              options_for_select(@actors.map { |actor| [actor.name, actor.id] }, @movie.actors.map { |actor| actor.id }),
+              multiple: true,
+              class: "form-control select-actor",
+              placeholder: "Search and select actor",
+              value: "1"
+            ) %>
           </div>
-          <div class="actor-thumbnails">
-            <%= render 'components/avatar', picture: '/images/img-avatar-default.png' %>
-            <%= render 'components/avatar', picture: '/images/img-avatar-default.png' %>
-            <%= render 'components/avatar', picture: '/images/img-avatar-default.png' %>
-          </div>
+          <ul class="actor-thumbnails">
+            <li class="actor-thumbnails__item d-inline item-sample">
+              <%= render 'components/avatar', picture: '/images/img-avatar-default.png' %>
+            </li>
+            <%  @movie.actors.each do |actor| %>
+              <li class="actor-thumbnails__item d-inline" data-id="<%= actor.id %>">
+                <%= render 'components/avatar', picture: actor.image.attached? ? url_for(actor.image) : '/images/img-avatar-default.png' %>
+              </li>
+            <% end %>
+          </ul>
         </div>
       </div>
       <div class="col-md-6">
@@ -43,6 +51,10 @@
     </button>
   </div>
 <% end %>
+
+<script>
+  var actors = JSON.parse('<%== j @actors_json %>')
+</script>
 
 <%= javascript_include_tag "datepicker", "data-turbolinks-track" => "reload" %>
 <%= stylesheet_link_tag "datepicker", media: "all", "data-turbolinks-track" => "reload" %>

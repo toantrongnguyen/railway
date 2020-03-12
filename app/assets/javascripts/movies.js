@@ -12,3 +12,22 @@ $('.input-datepicker').datepicker({
 })
 
 $('.select-actor').select2();
+
+$('.select-actor').on('change', function () {
+  const actorIdlist = $(this).val()
+
+  const parent = $('.actor-thumbnails')
+
+  $('.actor-thumbnails li:not(.item-sample)').remove()
+
+  actorIdlist.forEach(id => {
+    const item = $('.actor-thumbnails__item.item-sample').clone()
+      .removeClass('item-sample')
+    const picture = item.find('img')
+    const actor = actors.find(actor => actor.id == id)
+    if (actor && actor.picture) {
+      picture.attr('src', actor.picture)
+    }
+    parent.append(item)
+  })
+})
