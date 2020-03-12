@@ -9,19 +9,39 @@ class MovieService
     end
 
     def create(params)
-      Movie.create(params)
+      movie = Movie.new(movie_params(params))
+
+      if movie.valid?
+        movie.actors = getMovieActors(params[:actors])
+        movie.save
+      end
+
+      return movie
     end
 
     def find(params)
       Movie.find(params)
     end
 
+    def destroy(id)
+      movie = Movie.find(id)
+      movie.destroy
+    end
+
     def updateMovieId(id, params)
       movie = MovieService.find(id)
-      actors = params[:actors] ? ActorService.find(params[:actors]) : []
+      actors = getMovieActors(params[:actors])
       data = params.permit(:title, :description, :release_date).merge(actors: actors)
       movie.update(data)
       return movie
+    end
+
+    def movie_params(params)
+      params.permit(:title, :description, :release_date)
+    end
+
+    def getMovieActors(actorsIdList)
+      actors = actorsIdList ? ActorService.find(actorsIdList) : []
     end
   end
 end

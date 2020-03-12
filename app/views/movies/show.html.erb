@@ -55,7 +55,10 @@
                   <div class="project__button d-flex justify-content-center align-items-center mt-5">
                     <a href="<%= movies_path %>" class="button button--bg-white button--medium button--base mr-3"><i class="icon-fonts icon-fonts--edit-18 fa fa-arrow-left"></i>Back
                     </a>
-                    <a href="<%= edit_movie_path @movie %>" class="button button--red button--medium button--base ml-2" data-toggle="modal" data-target="#modalDeleteProject"><i class="icon-fonts icon-fonts--edit-18 fa fa-edit"></i>Edit
+                    <%= link_to @movie, method: :delete, class: "button button--red button--medium button--base mr-3" do %>
+                      <i class="icon-fonts icon-fonts--edit-18 fa fa-times"></i>Delete
+                    <% end %>
+                    <a href="<%= edit_movie_path @movie %>" class="button button--bg-blue button--medium button--base" data-toggle="modal" data-target="#modalDeleteProject"><i class="icon-fonts icon-fonts--edit-18 fa fa-edit"></i>Edit
                     </a>
                   </div>
                 </div>

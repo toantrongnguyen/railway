@@ -11,15 +11,12 @@ class MoviesController < ApplicationController
 
   def new
     @movie = MovieService.new
-    @actors = ActorService.listAll
+    get_movie_actors
   end
 
   def edit
     @movie = MovieService.find(params[:id])
-    @actors = ActorService.listAll
-    @actors_json = @actors
-      .map { |actor| { id: actor.id, picture: actor.image.attached? ? url_for(actor.image) : '/images/img-avatar-default.png' } }
-      .to_json
+    get_movie_actors
   end
 
   def create
@@ -42,8 +39,20 @@ class MoviesController < ApplicationController
     end
   end
 
+  def destroy
+    MovieService.destroy(params[:id])
+    redirect_to movies_path
+  end
+
   private
     def movie_params
       params.require(:movie).permit(:title, :description, :release_date, actors: [])
+    end
+
+    def get_movie_actors
+      @actors = ActorService.listAll
+      @actors_json = @actors
+        .map { |actor| { id: actor.id, picture: actor.image.attached? ? url_for(actor.image) : '/images/img-avatar-default.png' } }
+        .to_json
     end
 end
