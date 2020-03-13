@@ -13,6 +13,8 @@ class MovieService
 
       if movie.valid?
         movie.actors = getMovieActors(params[:actors])
+        thumbnails = params[:thumbnails]
+        movie.thumbnails.attach thumbnails if thumbnails
         movie.save
       end
 
@@ -31,13 +33,17 @@ class MovieService
     def updateMovieId(id, params)
       movie = MovieService.find(id)
       actors = getMovieActors(params[:actors])
+
       data = movie_params(params).merge(actors: actors)
+      thumbnails = params[:thumbnails]
+      movie.thumbnails.attach thumbnails if thumbnails
+
       movie.update(data)
       return movie
     end
 
     def movie_params(params)
-      params.permit(:title, :description, :release_date, thumbnails: [])
+      params.permit(:title, :description, :release_date)
     end
 
     def getMovieActors(actorsIdList)

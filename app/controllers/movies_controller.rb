@@ -25,7 +25,7 @@ class MoviesController < ApplicationController
     if @movie.valid?
       redirect_to @movie
     else
-      render json: @movie.errors, status: :unprocessable_entity
+      render :new
     end
   end
 
@@ -35,7 +35,7 @@ class MoviesController < ApplicationController
     if @movie.valid?
       redirect_to @movie
     else
-      render json: @movie.errors, status: :unprocessable_entity
+      render :edit
     end
   end
 
