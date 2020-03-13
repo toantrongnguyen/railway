@@ -50,7 +50,13 @@
           <% @movie.thumbnails.each do |thumbnail| %>
             <div class="movie__thumbnail-img">
               <img src="<%= url_for(thumbnail) %>">
-                <%= link_to @movie, method: :delete, class: "button button--red button--small button--base" do %>
+                <%= link_to(
+                  movie_delete_thumbnail_path(@movie, thumbnail),
+                  method: :delete,
+                  remote: true,
+                  'data-id': thumbnail.id,
+                  class: "button button--red button--small button--base btn-delete-thumbnail"
+                ) do %>
                   <i class="fa-2x fa fa-times"></i>
                 <% end %>
             </div>
@@ -78,6 +84,6 @@
 
 <% content_for :head do %>
   <%= javascript_include_tag "datepicker", 'data-turbolinks-track': 'reload' %>
-  <%= stylesheet_link_tag "datepicker", media: "all", 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag "datepicker", 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag params[:controller] %> 
 <% end %>

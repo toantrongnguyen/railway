@@ -1,6 +1,7 @@
 $(document).on('turbolinks:load', function() {
   initDropzone()
   initSelectActor()
+  initDeleteThumbnailButton()
   $('.input-datepicker').datepicker({
     format: 'yyyy-mm-dd',
   })
@@ -37,4 +38,10 @@ function initDropzone() {
       $('.movie-dropzone-count').removeClass('d-none')
     })
   }
+}
+
+function initDeleteThumbnailButton() {
+  $('.btn-delete-thumbnail').bind('ajax:complete', function () {
+    $(this).parent().remove()
+  })
 }

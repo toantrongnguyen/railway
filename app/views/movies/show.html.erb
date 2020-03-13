@@ -12,10 +12,16 @@
                     <div class="col-md-6">
                       <div class="project__souvenir-choice">
                         <ul class="movie-thumbnails">
-                          <% @movie.thumbnails.each do |thumbnail| %>
+                          <% if @movie.thumbnails.empty? then %>
                             <div class="movie__thumbnail-img">
-                              <img src="<%= url_for(thumbnail) %>">
+                              <img src="/images/placeholder.png">
                             </div>
+                          <% else %>
+                            <% @movie.thumbnails.each do |thumbnail| %>
+                              <div class="movie__thumbnail-img">
+                                <img src="<%= url_for(thumbnail) %>">
+                              </div>
+                            <% end %>
                           <% end %>
                         </ul>
                       </div>

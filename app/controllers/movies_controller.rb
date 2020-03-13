@@ -44,6 +44,14 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
+  def destroy_thumbnail
+    @movie = MovieService.find(params[:movie_id])
+    thumbnail_id = params[:thumbnail_id]
+    thumbnail = @movie.thumbnails.find(thumbnail_id)
+    thumbnail.purge
+    render json: { success: true }
+  end
+
   private
     def movie_params
       params.require(:movie).permit(:title, :description, :release_date, actors: [], thumbnails: [])
