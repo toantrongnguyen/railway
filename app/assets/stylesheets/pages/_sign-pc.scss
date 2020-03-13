@@ -3,12 +3,17 @@
 // ======================================================
 
 .sign {
-  background: url('../images/bg-sign.svg') no-repeat center center;
+  background: url('/images/bg-sign.jpg') no-repeat center center;
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+
+  &__inner-content {
+    height: 600px;
+  }
 
   &__inner {
     background: $white;
@@ -22,18 +27,6 @@
     &--complete {
       padding: 0;
       background-color: rgba(255, 255, 255, .5);
-    }
-
-    &:before {
-      @include abs-center-hoz;
-      @include size(calc(100% - 40px), 26px);
-      bottom: -25px;
-      content: '';
-      background: $white;
-      box-shadow: 0 0 20px $box-shadow-normal;
-      border-radius: 0 0 5px 5px;
-      z-index: 0;
-      opacity: .99;
     }
   }
 
@@ -77,7 +70,6 @@
 
   &__logo {
     &--complete {
-      background: url('../images/bg-logo.png') $white no-repeat center center;
       height: 100%;
       padding: 127px 45px 50px;
       max-width: 425px;
@@ -87,7 +79,7 @@
 
     &-title {
       font-size: $font-size-medium * 2;
-      margin: 30px 10px 80px;
+      margin: 30px 0;
       font-weight: $font-weight-light;
       line-height: 44px;
     }
