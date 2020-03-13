@@ -42,7 +42,27 @@
           <%= form.text_area :description, class: "form-control form-control--textarea" %>
         </div>
       </div>
+      <div class="col-md-12 mb-4">
+        <div class="form-group form-customize form-customize--textarea form-customize--has-value">
+          <%= form.label :description, "Thumbnail pictures", class: "label-title" %>
+        </div>
+        <div class="d-flex">
+          <% @movie.thumbnails.each do |thumbnail| %>
+            <div class="movie__thumbnail-img">
+              <img src="<%= url_for(thumbnail) %>">
+                <%= link_to @movie, method: :delete, class: "button button--red button--small button--base" do %>
+                  <i class="fa-2x fa fa-times"></i>
+                <% end %>
+            </div>
+          <% end %>
+          <label class="movie-dropzone">
+            <i class="fa fa-plus icon-fonts icon-fonts--add-30"></i>
+            <p class="movie-dropzone-count d-none"><span class="number"></span> new file</p>
+            <%= form.file_field :thumbnails, multiple: true %>
+          </label>
+        </div>
       </div>
+    </div>
   </div>
   <div class="button-group d-flex justify-content-center">
     <a href="<%= back_to_link %>" class="button button--bg-white button--medium button--base mr-3"><i class="icon-fonts icon-fonts--edit-18 fa fa-arrow-left"></i>Back

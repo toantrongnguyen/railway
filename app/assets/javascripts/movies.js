@@ -7,6 +7,10 @@ $(document).on('ajax:error', function (event) {
   }
 })
 
+$(document).on('turbolinks:load', function() {
+  initDropzone()
+})
+
 $('.input-datepicker').datepicker({
   format: 'yyyy-mm-dd',
 })
@@ -31,3 +35,13 @@ $('.select-actor').on('change', function () {
     parent.append(item)
   })
 })
+
+function initDropzone() {
+  const dropzone = $('.movie-dropzone input')
+  if (dropzone.length) {
+    dropzone.change((e) => {
+      $('.movie-dropzone-count .number').text(e.target.files.length)
+      $('.movie-dropzone-count').removeClass('d-none')
+    })
+  }
+}

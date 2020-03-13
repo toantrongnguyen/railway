@@ -31,13 +31,13 @@ class MovieService
     def updateMovieId(id, params)
       movie = MovieService.find(id)
       actors = getMovieActors(params[:actors])
-      data = params.permit(:title, :description, :release_date).merge(actors: actors)
+      data = movie_params(params).merge(actors: actors)
       movie.update(data)
       return movie
     end
 
     def movie_params(params)
-      params.permit(:title, :description, :release_date)
+      params.permit(:title, :description, :release_date, thumbnails: [])
     end
 
     def getMovieActors(actorsIdList)
