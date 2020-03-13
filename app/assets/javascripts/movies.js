@@ -43,5 +43,10 @@ function initDropzone() {
 function initDeleteThumbnailButton() {
   $('.btn-delete-thumbnail').bind('ajax:complete', function () {
     $(this).parent().remove()
+    swal({
+      type: 'success',
+      title: 'Delete a thumbnail successfully',
+      timer: 1000,
+    });
   })
 }

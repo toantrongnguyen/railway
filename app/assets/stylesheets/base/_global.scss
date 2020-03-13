@@ -121,3 +121,13 @@ strong {
   }
 }
 
+.sweet-alert {
+  p, h1, h2, h3, h4, h5 {
+    margin-bottom: 16px;
+  }
+  
+  h2 {
+    font-size: $font-size-large;
+    line-height: 2;
+  }
+}
