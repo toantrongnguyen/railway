@@ -7,9 +7,9 @@ function onChangeRoute() {
   const path = /^\/(\w+)\/?/.exec(window.location.pathname)
   if (!path) return
   const route = path[1]
-  const index = ROUTES[route] || 0
+  const index = ROUTES[route]
   $('.menu-nav li').removeClass('active')
-  $($('.menu-nav li')[index]).addClass('active')
+  if (index >= 0) $($('.menu-nav li')[index]).addClass('active')
 }
 
 $(document).on('turbolinks:load', function() {
