@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get 'home/index'
   root 'home#index'
+  get 'home/index'
+  get 'signup', to: 'users#new'
+  get 'login', to: 'home#index'
   resources :users
   resources :movies do
     delete 'thumbnails/:thumbnail_id', to: 'movies#destroy_thumbnail', as: :delete_thumbnail

@@ -1,0 +1,56 @@
+<main class="main main--auth">
+  <div class="sign">
+    <div class="sign__inner sign__inner--complete">
+      <div class="d-flex sign__inner-content">
+        <div class="sign__logo sign__logo--complete">
+            <a class="menu__logo" href="#">
+              FIXLET
+            </a>
+          <h1 class="sign__logo-title">Welcome you</h1>
+        </div>
+        <div class="sign__content sign__content--complete sign__content--signin">
+          <h3 class="sign__sub-title mb-3 pb-1">Sign up</h3>
+            <div id="error-container" class="mt-4">
+              <% if @user.errors.any? %>
+                <div class="alert alert-danger">
+                  <% @user.errors.full_messages.each do |error| %>
+                    <div><%= error %></div>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          <%= form_with model: @user, local: true do |form| %>
+            <div class="form-group form-customize form-customize--has-value">
+              <%= form.label :name, class:"label-title" do %>
+                Your name<span class="required">*</span>
+              <% end %>
+              <%= form.text_field :name, class: "form-control", type: "text", placeholder: "toan" %>
+            </div>
+            <div class="form-group form-customize form-customize--has-value">
+              <%= form.label :email, class:"label-title" do %>
+                Email<span class="required">*</span>
+              <% end %>
+              <%= form.text_field :email, class: "form-control", type: "email", placeholder: "toannt181@gmail.com" %>
+            </div>
+            <div class="form-group form-customize form-customize--has-value">
+              <%= form.label :password, class:"label-title" do %>
+                Password<span class="required">*</span>
+              <% end %>
+              <%= form.text_field :password, class: "form-control", type: "password", placeholder: "****************" %>
+            </div>
+            <div class="form-group form-customize form-customize--has-value">
+              <%= form.label :password_confirmation, class:"label-title" do %>
+                Confirm Password<span class="required">*</span>
+              <% end %>
+              <%= form.text_field :password_confirmation, class: "form-control", type: "password", placeholder: "****************" %>
+            </div>
+            <div class="sign__button d-flex justify-content-between align-items-center mt-3 pt-2"><a class="sign__button-link" href="#">Have an account?</a>
+              <button type="submit" class="button button--blue button--w-140">Sign up
+              </button>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
