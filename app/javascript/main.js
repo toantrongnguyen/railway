@@ -5,13 +5,16 @@ const ROUTES = {
 
 function onChangeRoute() {
   const path = /^\/(\w+)\/?/.exec(window.location.pathname)
-  if (!path) return
+  if (!path) {
+    $('.menu-nav li').removeClass('active')
+    return
+  }
   const route = path[1]
-  const index = ROUTES[route]
+  const index = ROUTES[route] || 0
   $('.menu-nav li').removeClass('active')
-  if (index >= 0) $($('.menu-nav li')[index]).addClass('active')
+  $($('.menu-nav li')[index]).addClass('active')
 }
 
-$(document).on('turbolinks:load', function() {
+$(document).on('turbolinks:load', function () {
   onChangeRoute()
 })
