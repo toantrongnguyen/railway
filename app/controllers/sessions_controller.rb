@@ -1,6 +1,10 @@
 class SessionsController < ApplicationController
   layout 'auth'
 
+  before_action :anonymous_user, only: [:new, :create]
+
+  before_action :logged_in_user, only: [:delete]
+
   def new
   end
 
@@ -20,4 +24,11 @@ class SessionsController < ApplicationController
     log_out
     redirect_to login_path
   end
+
+  private
+    def anonymous_user
+      if logged_in?
+        redirect_to controller: :home, method: :index
+      end
+    end
 end

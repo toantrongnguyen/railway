@@ -13,8 +13,10 @@
                 <li class="menu__item js-menu-item"><%= link_to 'Actors', actors_path %></li>
               </ul>
             </div>
-            <div class="menu-user"><a class="menu-user__avatar d-flex align-items-center justify-content-between" href="#"><img class="menu-user__img" src="../images/img-avatar.png" alt="">
-                <div class="menu-user__name">Toan</div>
+            <div class="menu-user">
+              <a class="menu-user__avatar d-flex align-items-center justify-content-between" href="#">
+                <div class="menu-user__img"><%= current_user[:name][0] %></div>
+                <div class="menu-user__name"><%= current_user[:name] %></div>
                 <div class="menu-user__icon"><i class="fa fa-caret-down"></i>
                 </div>
               </a>

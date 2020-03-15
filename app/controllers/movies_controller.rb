@@ -1,6 +1,8 @@
 require 'json'
 
 class MoviesController < ApplicationController
+  before_action :logged_in_user
+
   def index
     @movies = MovieService.listAll
   end

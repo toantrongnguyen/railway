@@ -48,6 +48,12 @@
   &__img {
     @include circle(43px);
     border: 1px solid $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    font-size: $font-size-large;
+    font-weight: $font-weight-bold;
   }
 
   &__name {
