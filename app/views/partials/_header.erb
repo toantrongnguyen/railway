@@ -5,7 +5,7 @@
         <div class="col-12">
           <div class="header-pc__menu d-flex justify-content-between">
             <div class="menu d-flex align-items-center">
-              <a class="menu__logo" href="#">
+              <a class="menu__logo" href="/">
                 FIXLET
               </a>
               <ul class="menu__list menu-nav">
@@ -19,10 +19,7 @@
                 </div>
               </a>
               <ul class="menu-user__list">
-                <li class="menu-user__item active"><a href="#">ダッシュボード</a></li>
-                <li class="menu-user__item"><a href="#">案内状管理 </a></li>
-                <li class="menu-user__item"><a href="#">リマインド設定 </a></li>
-                <li class="menu-user__item"><a href="#">お問い合わせ</a></li>
+                <li class="menu-user__item"><%= link_to "Logout", logout_path, method: :delete %></li>
               </ul>
             </div>
           </div>

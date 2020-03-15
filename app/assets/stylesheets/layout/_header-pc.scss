@@ -58,6 +58,22 @@
 
   &__list {
     display: none;
+    background: $white;
+    position: absolute;
+    border: 1px solid $gray;
+    border-radius: $border-radius-medium;
+    z-index: 1;
+    width: 150px;
+  }
+
+  &__item {
+    padding: 8px 12px;
+  }
+
+  &:hover {
+    .menu-user__list {
+      display: block;
+    }
   }
 
   &__icon {

@@ -1,36 +1,17 @@
-<main class="main main--auth">
-  <div class="sign">
-    <div class="sign__inner sign__inner--complete">
-      <div class="d-flex sign__inner-content">
-        <div class="sign__logo sign__logo--complete">
-            <a class="menu__logo" href="#">
-              FIXLET
-            </a>
-          <h1 class="sign__logo-title">Welcome you</h1>
-          <div class="sign__logo-ft d-flex align-items-center justify-content-between">
-            <div class="sign__logo-user">Doesn't have an account?<a class="sign__logo-link" href="#">Create an account</a></div><i class="icon-fonts icon-fonts--arrow-right1"></i>
-          </div>
-        </div>
-        <div class="sign__content sign__content--complete sign__content--signin">
-          <h3 class="sign__sub-title mb-3 pb-1">Login</h3>
-          <div class="form-group form-customize form-customize--has-value">
-            <label class="label-title" for="email">Email<span class="required">*</span>
-            </label>
-            <input class="form-control" type="text" id="email" placeholder="toannt181@gmail.com">
-          </div>
-          <div class="form-group form-customize form-customize--has-value">
-            <label class="label-title" for="password">Password<span class="required">*</span>
-            </label>
-            <div class="form-input">
-              <input class="form-control" type="text" id="password" placeholder="****************"><span class="input-addon"><i class="icon-fonts icon-fonts--off-pass"></i></span>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="project project--detail">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="project__title">Homepage</h2>
+              <div>
+                <%= current_user.to_json %>
+              </div>
             </div>
-          </div>
-          <div class="sign__button d-flex justify-content-between align-items-center mt-3 pt-2"><a class="sign__button-link" href="#">Forgot password?</a>
-            <button class="button button--blue button--w-140">Login
-            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
-</main>
+</div>
