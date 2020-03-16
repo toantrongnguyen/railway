@@ -3,6 +3,7 @@ lock "~> 3.12.1"
 
 set :application, "railway"
 set :repo_url, "git@github.com:toannt181/railway.git"
+set :ssh_options, { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
