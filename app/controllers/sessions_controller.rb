@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:password])
       log_in(user)
-      redirect_to controller: :home, method: :index
+      redirect_to controller: :home, action: :index
     else
       flash.now[:danger] = 'Invalid email or password'
       render :new
@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
   private
     def anonymous_user
       if logged_in?
-        redirect_to controller: :home, method: :index
+        redirect_to controller: :home, action: :index
       end
     end
 end

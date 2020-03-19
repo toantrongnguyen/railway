@@ -10,8 +10,9 @@ function onChangeRoute() {
     return
   }
   const route = path[1]
-  const index = ROUTES[route] || 0
+  const index = ROUTES[route]
   $('.menu-nav li').removeClass('active')
+  if (index === undefined) return
   $($('.menu-nav li')[index]).addClass('active')
 }
 
