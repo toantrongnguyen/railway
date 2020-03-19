@@ -1,6 +1,7 @@
 module SessionsHelper
   def log_in(user)
     session[:user_id] = user.id
+    session[:expires_at] = 24.hours.from_now
   end
 
   def current_user
