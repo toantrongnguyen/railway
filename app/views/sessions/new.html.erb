@@ -31,6 +31,13 @@
               <% end %>
               <%= form.text_field :password, class: "form-control", type: "password", placeholder: "****************" %>
             </div>
+            <div class="form-group form-customize form-customize--has-value">
+              <label class="checkbox d-flex align-items-center">
+                <%= form.check_box :remember_me, class: "input-checkbox" %>
+                <span class="checkmark"></span>
+                <span class="font-weight-normal">Remember me</span>
+              </label>
+            </div>
             <div class="sign__button d-flex justify-content-between align-items-center mt-3 pt-2"><a class="sign__button-link" href="#">Forget password?</a>
               <button type="submit" class="button button--blue button--w-140">Login
               </button>

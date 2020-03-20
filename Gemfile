@@ -6,6 +6,7 @@ ruby '2.7.0'
 gem 'bootstrap', '~> 4.0.0'
 gem 'font-awesome-rails'
 gem 'bcrypt', '3.1.12'
+gem 'faker'
 
 gem 'capistrano', '~> 3.11'
 gem 'capistrano-rails', '~> 1.4'

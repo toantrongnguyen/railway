@@ -79,9 +79,11 @@ ActiveRecord::Schema.define(version: 2020_03_19_071258) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
+    t.boolean "activated", default: false
+    t.string "activated_digest"
+    t.datetime "activated_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "remember_digest"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
