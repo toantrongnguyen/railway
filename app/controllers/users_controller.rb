@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user = UserService.create(params)
 
     if @user.valid? then
+      UserMailer.account_activation(@user).deliver_now!
       redirect_to login_path
     else
       render :new, layout: 'auth'
