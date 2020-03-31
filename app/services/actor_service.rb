@@ -5,7 +5,7 @@ class ActorService
     end
 
     def listAll(params)
-      Actor.order(created_at: :desc).paginate(page: params[:page] || 1)
+      Actor.all
     end
 
     def create(params)

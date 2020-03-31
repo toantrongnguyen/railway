@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :comments
+
   before_save { self.email = email.downcase }
   
   before_create :create_activated_token

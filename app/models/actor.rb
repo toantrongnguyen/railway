@@ -9,6 +9,8 @@ class Actor < ApplicationRecord
 
   validates :name, :gender, presence: true
 
+  default_scope { order(created_at: :desc) }
+
   def age
     self.birthday ? ((Date.today - self.birthday) / 365).to_i : 0
   end

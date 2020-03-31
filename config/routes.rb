@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users
   resources :movies do
     delete 'thumbnails/:thumbnail_id', to: 'movies#destroy_thumbnail', as: :delete_thumbnail
+    resources :comments
   end
   resources :actors
   resources :account_activations

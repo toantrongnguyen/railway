@@ -9,6 +9,8 @@ class MoviesController < ApplicationController
 
   def show
     @movie = MovieService.find(params[:id])
+    @comments = CommentService.findByMovieId(params[:id])
+    @comment = CommentService.new
   end
 
   def new
