@@ -79,7 +79,12 @@
     </div>
 
     <div class="col-12">
+      <%= render 'comments/list', list: @comments %>
       <%= render 'comments/form' %>
     </div>
   </div>
 </div>
+
+<% content_for :head do %>
+  <%= javascript_include_tag :comment %> 
+<% end %>

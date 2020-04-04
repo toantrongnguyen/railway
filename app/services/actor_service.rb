@@ -4,7 +4,7 @@ class ActorService
       Actor.new
     end
 
-    def listAll(params)
+    def listAll()
       Actor.all
     end
 
